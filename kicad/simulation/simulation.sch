@@ -1,0 +1,390 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Device:Q_NMOS_DGS Q2
+U 1 1 5F92C809
+P 7550 2950
+F 0 "Q2" H 7754 2996 50  0000 L CNN
+F 1 "IRLML6244" H 7754 2905 50  0000 L CNN
+F 2 "" H 7750 3050 50  0001 C CNN
+F 3 "~" H 7550 2950 50  0001 C CNN
+F 4 "X" H 7550 2950 50  0001 C CNN "Spice_Primitive"
+F 5 "irlml6244pbf" H 7550 2950 50  0001 C CNN "Spice_Model"
+F 6 "Y" H 7550 2950 50  0001 C CNN "Spice_Netlist_Enabled"
+F 7 "/Users/d050892/GitHub/barn53-kicad-library/spice/irlml6244pbf.sp" H 7550 2950 50  0001 C CNN "Spice_Lib_File"
+	1    7550 2950
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Q_PMOS_DGS Q1
+U 1 1 5F92D6DC
+P 6550 1700
+F 0 "Q1" H 6754 1746 50  0000 L CNN
+F 1 "IRLML6402" H 6754 1655 50  0000 L CNN
+F 2 "" H 6750 1800 50  0001 C CNN
+F 3 "~" H 6550 1700 50  0001 C CNN
+F 4 "X" H 6550 1700 50  0001 C CNN "Spice_Primitive"
+F 5 "irlml6402" H 6550 1700 50  0001 C CNN "Spice_Model"
+F 6 "Y" H 6550 1700 50  0001 C CNN "Spice_Netlist_Enabled"
+F 7 "/Users/d050892/GitHub/barn53-kicad-library/spice/irlml6402.sp" H 6550 1700 50  0001 C CNN "Spice_Lib_File"
+	1    6550 1700
+	1    0    0    1   
+$EndComp
+$Comp
+L pspice:0 #GND02
+U 1 1 5F92EA5B
+P 7650 3400
+F 0 "#GND02" H 7650 3300 50  0001 C CNN
+F 1 "0" H 7650 3489 50  0000 C CNN
+F 2 "" H 7650 3400 50  0001 C CNN
+F 3 "~" H 7650 3400 50  0001 C CNN
+	1    7650 3400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Simulation_SPICE:VDC V1
+U 1 1 5F92F118
+P 4400 1650
+F 0 "V1" H 4530 1741 50  0000 L CNN
+F 1 "VDC" H 4530 1650 50  0000 L CNN
+F 2 "" H 4400 1650 50  0001 C CNN
+F 3 "~" H 4400 1650 50  0001 C CNN
+F 4 "Y" H 4400 1650 50  0001 L CNN "Spice_Netlist_Enabled"
+F 5 "V" H 4400 1650 50  0001 L CNN "Spice_Primitive"
+F 6 "dc 10 pulse(0 5 100u 200u)" H 4530 1559 50  0000 L CNN "Spice_Model"
+	1    4400 1650
+	1    0    0    -1  
+$EndComp
+$Comp
+L pspice:0 #GND03
+U 1 1 5F92FB04
+P 4400 2050
+F 0 "#GND03" H 4400 1950 50  0001 C CNN
+F 1 "0" H 4400 2139 50  0000 C CNN
+F 2 "" H 4400 2050 50  0001 C CNN
+F 3 "~" H 4400 2050 50  0001 C CNN
+	1    4400 2050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4400 1450 4400 1200
+Text Label 4800 1200 2    50   ~ 0
+Uin
+$Comp
+L Device:R R3
+U 1 1 5F9351E2
+P 5700 2750
+F 0 "R3" H 5770 2796 50  0000 L CNN
+F 1 "1M" H 5770 2705 50  0001 L CNN
+F 2 "" V 5630 2750 50  0001 C CNN
+F 3 "~" H 5700 2750 50  0001 C CNN
+F 4 "R" H 5700 2750 50  0001 C CNN "Spice_Primitive"
+F 5 "1meg" H 5770 2705 50  0000 L CNN "Spice_Model"
+F 6 "Y" H 5700 2750 50  0001 C CNN "Spice_Netlist_Enabled"
+	1    5700 2750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C1
+U 1 1 5F937393
+P 5700 3650
+F 0 "C1" H 5815 3696 50  0000 L CNN
+F 1 "330n" H 5815 3605 50  0001 L CNN
+F 2 "" H 5738 3500 50  0001 C CNN
+F 3 "~" H 5700 3650 50  0001 C CNN
+F 4 "C" H 5700 3650 50  0001 C CNN "Spice_Primitive"
+F 5 "330n" H 5815 3605 50  0000 L CNN "Spice_Model"
+F 6 "Y" H 5700 3650 50  0001 C CNN "Spice_Netlist_Enabled"
+	1    5700 3650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5700 3800 5700 4000
+Text Label 5700 3450 0    50   ~ 0
+Uc
+Wire Wire Line
+	4400 1850 4400 2050
+$Comp
+L Device:R R1
+U 1 1 5F93C864
+P 5700 2000
+F 0 "R1" H 5770 2046 50  0000 L CNN
+F 1 "100k" H 5770 1955 50  0001 L CNN
+F 2 "" V 5630 2000 50  0001 C CNN
+F 3 "~" H 5700 2000 50  0001 C CNN
+F 4 "R" H 5700 2000 50  0001 C CNN "Spice_Primitive"
+F 5 "100k" H 5770 1955 50  0000 L CNN "Spice_Model"
+F 6 "Y" H 5700 2000 50  0001 C CNN "Spice_Netlist_Enabled"
+	1    5700 2000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6350 1700 5700 1700
+Wire Wire Line
+	5700 1700 5700 1850
+Wire Wire Line
+	5700 2150 5700 2250
+$Comp
+L pspice:0 #GND04
+U 1 1 5F93D39C
+P 5700 4000
+F 0 "#GND04" H 5700 3900 50  0001 C CNN
+F 1 "0" H 5700 4089 50  0000 C CNN
+F 2 "" H 5700 4000 50  0001 C CNN
+F 3 "~" H 5700 4000 50  0001 C CNN
+	1    5700 4000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R4
+U 1 1 5F93D8FA
+P 6650 2700
+F 0 "R4" H 6720 2746 50  0000 L CNN
+F 1 "10k" H 6720 2655 50  0001 L CNN
+F 2 "" V 6580 2700 50  0001 C CNN
+F 3 "~" H 6650 2700 50  0001 C CNN
+F 4 "R" H 6650 2700 50  0001 C CNN "Spice_Primitive"
+F 5 "10k" H 6720 2655 50  0000 L CNN "Spice_Model"
+F 6 "Y" H 6650 2700 50  0001 C CNN "Spice_Netlist_Enabled"
+	1    6650 2700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R2
+U 1 1 5F940906
+P 7650 2000
+F 0 "R2" H 7720 2046 50  0000 L CNN
+F 1 "10k" H 7720 1955 50  0001 L CNN
+F 2 "" V 7580 2000 50  0001 C CNN
+F 3 "~" H 7650 2000 50  0001 C CNN
+F 4 "R" H 7650 2000 50  0001 C CNN "Spice_Primitive"
+F 5 "10k" H 7720 1955 50  0000 L CNN "Spice_Model"
+F 6 "Y" H 7650 2000 50  0001 C CNN "Spice_Netlist_Enabled"
+	1    7650 2000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6650 1200 6650 1500
+Wire Wire Line
+	4400 1200 6650 1200
+Wire Wire Line
+	6650 1200 7650 1200
+Wire Wire Line
+	7650 1200 7650 1650
+Connection ~ 6650 1200
+Wire Wire Line
+	6650 1900 6650 2400
+Wire Wire Line
+	6350 2550 6350 2400
+Wire Wire Line
+	6350 2400 6650 2400
+Connection ~ 6650 2400
+Wire Wire Line
+	6650 2400 6650 2550
+Connection ~ 5700 2250
+Wire Wire Line
+	5700 2250 5700 2600
+Wire Wire Line
+	7650 2250 7650 2150
+$Comp
+L pspice:0 #GND01
+U 1 1 5F944DA9
+P 6350 3050
+F 0 "#GND01" H 6350 2950 50  0001 C CNN
+F 1 "0" H 6350 3139 50  0000 C CNN
+F 2 "" H 6350 3050 50  0001 C CNN
+F 3 "~" H 6350 3050 50  0001 C CNN
+	1    6350 3050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6350 3050 6350 2850
+Wire Wire Line
+	6650 2950 6650 2850
+Wire Wire Line
+	5700 2250 7650 2250
+Wire Wire Line
+	5700 2900 5700 3250
+Wire Wire Line
+	5700 3250 6650 3250
+Connection ~ 5700 3250
+Wire Wire Line
+	5700 3250 5700 3500
+$Comp
+L Simulation_SPICE:VDC V2
+U 1 1 5F9613FB
+P 6700 4650
+F 0 "V2" H 6830 4741 50  0000 L CNN
+F 1 "VDC" H 6830 4650 50  0000 L CNN
+F 2 "" H 6700 4650 50  0001 C CNN
+F 3 "~" H 6700 4650 50  0001 C CNN
+F 4 "Y" H 6700 4650 50  0001 L CNN "Spice_Netlist_Enabled"
+F 5 "V" H 6700 4650 50  0001 L CNN "Spice_Primitive"
+F 6 "dc 10 pulse(0 5 1 200u 200u 500m 3)" H 6830 4559 50  0000 L CNN "Spice_Model"
+	1    6700 4650
+	1    0    0    -1  
+$EndComp
+$Comp
+L pspice:0 #GND06
+U 1 1 5F9621C0
+P 6700 5000
+F 0 "#GND06" H 6700 4900 50  0001 C CNN
+F 1 "0" H 6700 5089 50  0000 C CNN
+F 2 "" H 6700 5000 50  0001 C CNN
+F 3 "~" H 6700 5000 50  0001 C CNN
+	1    6700 5000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6700 5000 6700 4850
+$Comp
+L pspice:0 #GND05
+U 1 1 5F9630DF
+P 6950 4150
+F 0 "#GND05" H 6950 4050 50  0001 C CNN
+F 1 "0" H 6950 4239 50  0000 C CNN
+F 2 "" H 6950 4150 50  0001 C CNN
+F 3 "~" H 6950 4150 50  0001 C CNN
+	1    6950 4150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6950 4150 6950 4000
+Wire Wire Line
+	7650 2750 7650 2450
+Connection ~ 7650 2250
+Text Label 6700 4350 0    50   ~ 0
+Uswitch
+Wire Wire Line
+	6700 4000 6700 4450
+Wire Wire Line
+	6650 2950 7000 2950
+$Comp
+L barn53-kicad:SPICE_VCSWITCH S1
+U 1 1 5F9788DF
+P 7050 3900
+F 0 "S1" H 7078 4146 50  0000 L CNN
+F 1 "SPICE_VCSWITCH" H 7078 4055 50  0000 L CNN
+F 2 "" H 7050 3900 50  0001 C CNN
+F 3 "" H 7050 3900 50  0001 C CNN
+F 4 "X" H 7550 3550 50  0001 C CNN "Spice_Primitive"
+F 5 "vcswitch" H 7250 3550 50  0001 C CNN "Spice_Model"
+F 6 "Y" H 7850 3550 50  0001 C CNN "Spice_Netlist_Enabled"
+F 7 "/Users/d050892/GitHub/barn53-kicad-library/spice/vcswitch.sp" H 7450 3450 50  0001 C CNN "Spice_Lib_File"
+	1    7050 3900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7650 3150 7650 3400
+Wire Wire Line
+	7000 3400 7000 2950
+Connection ~ 7000 2950
+Wire Wire Line
+	7000 2950 7350 2950
+Wire Wire Line
+	6650 3250 6650 3400
+Text Label 7000 2950 0    50   ~ 0
+Ug2
+$Comp
+L Device:R R5
+U 1 1 5F9404BB
+P 6350 2700
+F 0 "R5" H 6420 2746 50  0000 L CNN
+F 1 "10k" H 6420 2655 50  0001 L CNN
+F 2 "" V 6280 2700 50  0001 C CNN
+F 3 "~" H 6350 2700 50  0001 C CNN
+F 4 "R" H 6350 2700 50  0001 C CNN "Spice_Primitive"
+F 5 "10k" H 6420 2655 50  0000 L CNN "Spice_Model"
+F 6 "Y" H 6350 2700 50  0001 C CNN "Spice_Netlist_Enabled"
+	1    6350 2700
+	1    0    0    -1  
+$EndComp
+Text Label 6000 1700 0    50   ~ 0
+Ug1
+$Comp
+L Device:R R6
+U 1 1 5F9881E8
+P 8300 2000
+F 0 "R6" H 8370 2046 50  0000 L CNN
+F 1 "10k" H 8370 1955 50  0001 L CNN
+F 2 "" V 8230 2000 50  0001 C CNN
+F 3 "~" H 8300 2000 50  0001 C CNN
+F 4 "R" H 8300 2000 50  0001 C CNN "Spice_Primitive"
+F 5 "1k" H 8370 1955 50  0000 L CNN "Spice_Model"
+F 6 "Y" H 8300 2000 50  0001 C CNN "Spice_Netlist_Enabled"
+	1    8300 2000
+	1    0    0    -1  
+$EndComp
+Connection ~ 7650 1650
+Wire Wire Line
+	8300 2150 8300 2450
+Connection ~ 7650 2450
+Wire Wire Line
+	7650 2450 7650 2250
+$Comp
+L Device:C C2
+U 1 1 5F98A08F
+P 8700 2000
+F 0 "C2" H 8815 2046 50  0000 L CNN
+F 1 "10n" H 8815 1955 50  0001 L CNN
+F 2 "" H 8738 1850 50  0001 C CNN
+F 3 "~" H 8700 2000 50  0001 C CNN
+F 4 "C" H 8700 2000 50  0001 C CNN "Spice_Primitive"
+F 5 "1u" H 8815 1955 50  0000 L CNN "Spice_Model"
+F 6 "Y" H 8700 2000 50  0001 C CNN "Spice_Netlist_Enabled"
+	1    8700 2000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8700 1850 8700 1650
+Wire Wire Line
+	8700 1650 8300 1650
+Connection ~ 8300 1650
+Wire Wire Line
+	8300 2450 8700 2450
+Wire Wire Line
+	8700 2450 8700 2150
+Connection ~ 8300 2450
+Wire Wire Line
+	7800 1650 7650 1650
+Wire Wire Line
+	8300 1650 8100 1650
+Wire Wire Line
+	8300 2450 7650 2450
+Text Label 7300 2250 0    50   ~ 0
+Uout
+$Comp
+L barn53-kicad:BAT60A D?
+U 1 1 5F999EDB
+P 7950 1650
+F 0 "D?" H 7950 1434 50  0000 C CNN
+F 1 "BAT60A" H 7950 1525 50  0000 C CNN
+F 2 "Diode_SMD:D_SOD-323F" H 8670 1530 50  0001 C CNN
+F 3 "~" H 7950 1650 50  0001 C CNN
+F 4 "X" H 7950 1650 50  0001 C CNN "Spice_Primitive"
+F 5 "D359" H 7950 1650 50  0001 C CNN "Spice_Model"
+F 6 "Y" H 7950 1650 50  0001 C CNN "Spice_Netlist_Enabled"
+F 7 "/Users/d050892/GitHub/barn53-kicad-library/spice/bat60a/D359_v7.TXT" H 7950 1650 50  0001 C CNN "Spice_Lib_File"
+	1    7950 1650
+	-1   0    0    1   
+$EndComp
+Text Notes 8400 1400 0    50   ~ 0
+.tran 1m 15
+Wire Wire Line
+	7650 1650 7650 1850
+Wire Wire Line
+	8300 1650 8300 1850
+$EndSCHEMATC
